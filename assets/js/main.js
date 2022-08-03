@@ -1,7 +1,7 @@
 // Capturar evento de submit do formulário
 const form = document.querySelector('#formulario');
-
-form.addEventListener('submit', function (e) {
+//parar o envio do formulário uitlizando o evento
+form.addEventListener('submit', function (e) { //primeiro parametro qual o evento deve escultar:submet
   e.preventDefault();
   const inputPeso = e.target.querySelector('#peso');
   const inputAltura = e.target.querySelector('#altura');
@@ -43,18 +43,18 @@ function getImc (peso, altura) {
   const imc = peso / altura ** 2;
   return imc.toFixed(2);
 }
-
+//cria  o paragrafo (tag p)
 function criaP () {
   const p = document.createElement('p');
   return p;
 }
-
+//funcção que coloca o resultadao dentro da div
 function setResultado (msg, isValid) {
   const resultado = document.querySelector('#resultado');
-  resultado.innerHTML = '';
+  resultado.innerHTML = '';//limpa o html result
 
   const p = criaP();
-
+//adcionando uma classe no paragrafo(atributo  P)
   if (isValid) {
     p.classList.add('paragrafo-resultado');
   } else {
